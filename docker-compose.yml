@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  webhookbot:
+    image: webhookbot
+    build:
+      context: ./WebhookBot
+      dockerfile: Dockerfile
