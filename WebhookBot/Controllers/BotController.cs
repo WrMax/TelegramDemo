@@ -16,8 +16,8 @@ namespace WebApplication1.Controllers
         }
 
         /// <summary>Метод нужен только для тестирования через Ngrok</summary>
-        // GET bot/Ngrok/hostname
-        [HttpGet("Ngrok/{hostname}")]
+        // GET bot/ngrok/hostname
+        [HttpGet("ngrok/{hostname}")]
         public RedirectResult Ngrok(string hostname)
         {
             BotService.Instance.Connect(hostname);
@@ -28,7 +28,8 @@ namespace WebApplication1.Controllers
         [HttpPost]
 		public void Post([FromBody]Update update)
         {
-            BotService.Instance.Process(update);
+            if (update == null) return;
+            BotService.Instance.Process(update.Message);
         }
 	}
 }

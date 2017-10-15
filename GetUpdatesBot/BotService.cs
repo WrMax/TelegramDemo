@@ -1,9 +1,10 @@
 ﻿using System;
 using Telegram.Bot;
+using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
-namespace WebApplication1.Services
+namespace GetUpdatesBot.Services
 {
     public sealed class BotService
     {
@@ -15,8 +16,9 @@ namespace WebApplication1.Services
         private BotService()
         {
             const string token = "457238275:AAGwAgHUq0i6PwRn2mAYufYp1yHNeJqv4RA";
-            client = new TelegramBotClient(token);
-            //Connect("Сервер_на_которой_работает_сервис");
+            client = new TelegramBotClient(token);            
+            client.OnMessage += BotOnMessageReceived;
+            client.OnMessageEdited += BotOnMessageReceived;
         }
 
         public static BotService Instance
@@ -28,15 +30,24 @@ namespace WebApplication1.Services
         }
 
         /// <summary>Установка связи между ботом и Telegram</summary>
-        public void Connect(string hostname)
+        public void Connect()
         {
-            client.SetWebhookAsync(string.Concat("https://", hostname, "/bot")).Wait();
+            client.SetWebhookAsync(); // Отключение webhook
+            client.StartReceiving();
         }
 
         /// <summary>Отключение связи между ботом и Telegram</summary>
+        /// <remarks>Вызывает ReceiveAsync который дергает GetUpdatesAsync</remarks>
         public void Disconnect()
         {
-            client.SetWebhookAsync().Wait();
+            client.StopReceiving();
+        }
+
+        /// <summary>Обработка сообщений от пользователя</summary>
+        private void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
+        {
+            var message = messageEventArgs.Message;
+            Process(message);
         }
 
         public async void Process(Message message)
