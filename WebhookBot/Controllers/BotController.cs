@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public string Ping()
         {
-            return "Бот работает. Настройте Ngrok";
+            return "Бот работает.";
         }
 
         /// <summary>Метод нужен только для тестирования через Ngrok</summary>
