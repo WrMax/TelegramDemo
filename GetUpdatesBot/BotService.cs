@@ -52,8 +52,7 @@ namespace GetUpdatesBot.Services
 
         public async void Process(Message message)
         {
-            if (message == null) return;
-            if (message.Type == MessageType.TextMessage)
+            if (message?.Type == MessageType.TextMessage)
             {
                 await client.SendTextMessageAsync(message.Chat.Id, message.Text);
             }

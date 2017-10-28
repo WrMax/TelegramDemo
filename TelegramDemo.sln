@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebhookBot", "WebhookBot\We
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D5EAE4FA-3617-4CB4-B2DB-CC93B10D4C93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetUpdatesBot", "GetUpdatesBot\GetUpdatesBot.csproj", "{BA119E73-4729-439E-B673-1E2A772C28B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetUpdatesBot", "GetUpdatesBot\GetUpdatesBot.csproj", "{BA119E73-4729-439E-B673-1E2A772C28B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotFrameworkSample", "BotFrameworkSample\BotFrameworkSample.csproj", "{8A8DB1EF-ABDD-4513-B4B9-FA9483AEF27B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{BA119E73-4729-439E-B673-1E2A772C28B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA119E73-4729-439E-B673-1E2A772C28B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA119E73-4729-439E-B673-1E2A772C28B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A8DB1EF-ABDD-4513-B4B9-FA9483AEF27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8DB1EF-ABDD-4513-B4B9-FA9483AEF27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8DB1EF-ABDD-4513-B4B9-FA9483AEF27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8DB1EF-ABDD-4513-B4B9-FA9483AEF27B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
