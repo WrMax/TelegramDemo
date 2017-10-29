@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BotFrameworkSample.Controllers
 {
@@ -18,6 +19,9 @@ namespace BotFrameworkSample.Controllers
         [HttpPost]
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
+            //var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+            //var reply = activity.CreateReply(activity.Text);
+            //await connector.Conversations.ReplyToActivityAsync(reply);
             if (activity?.Type == ActivityTypes.Message)
             {
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
