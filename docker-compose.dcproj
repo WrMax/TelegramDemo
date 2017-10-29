@@ -5,7 +5,7 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>d5eae4fa-3617-4cb4-b2db-cc93b10d4c93</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
-    <DockerServiceUrl>http://localhost:{ServicePort}/api/values</DockerServiceUrl>
+    <DockerServiceUrl>http://localhost:{ServicePort}/bot</DockerServiceUrl>
     <DockerServiceName>webhookbot</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

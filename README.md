@@ -19,6 +19,13 @@ https://xxДОМЕННОЕxxИМЯxxКОТОРОЕxxВЕРНУЛxxNGROKxx/bot
 в конструкторе класса BotService настроить строку
 Connect("https://xxДОМЕННОЕxxИМЯxxКОТОРОЕxxВЕРНУЛxxNGROKxx/bot");
 бот заработает после запуска на локальной машине и вызове команды Tools -> Start ngrok tunnel
+### docker-compose
+Запускает WebhookBot в docker-контейнере.
+После запуска выполните команду ngrok http портсервиса.
+Полученный от ngrok адрес укажите в вызове
+https://localhost:порт/ngrok/xxДОМЕННОЕxxИМЯxxКОТОРОЕxxВЕРНУЛxxNGROKxx
+если всё хорошо, то произойдет переход на адрес
+https://xxДОМЕННОЕxxИМЯxxКОТОРОЕxxВЕРНУЛxxNGROKxx/bot
 ### BotFrameworkSample
 в этом примере доступно тестирование только на локальной машине
 после запуска BotFrameworkSample необходимо открыть BotFrameworkEmulator ввести адрес
